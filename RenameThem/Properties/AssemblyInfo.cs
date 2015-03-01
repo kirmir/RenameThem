@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RenameThem")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Rename Them")]
+[assembly: AssemblyDescription("A small Windows tool for renaming all files in a folder using the specified pattern.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("RenameThem")]
-[assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2015")]
+[assembly: AssemblyCompany("Myroshnychenko Kyrylo")]
+[assembly: AssemblyProduct("Rename Them")]
+[assembly: AssemblyCopyright("Copyright © Myroshnychenko Kyrylo 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

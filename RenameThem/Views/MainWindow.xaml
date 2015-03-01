@@ -1,0 +1,29 @@
+﻿<Window x:Class="RenameThem.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Rename Them 1.0"
+        Width="525"
+        Height="350"
+        Icon="../App.ico"
+        SizeToContent="Height">
+    <Grid Margin="10,10,10,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Target="{Binding ElementName=UxPath}">Path:</Label>
+        <TextBox x:Name="UxPath" Grid.Row="1" />
+        <Label Grid.Row="3">Rename pattern:</Label>
+        <TextBox x:Name="UxPattern" Grid.Row="4" />
+        <Button Grid.Row="6"
+                HorizontalAlignment="Center"
+                Padding="16,3">
+            Rename Them!
+        </Button>
+    </Grid>
+</Window>
