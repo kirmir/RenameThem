@@ -16,7 +16,7 @@ namespace RenameThem.ViewModels
         public MainViewModel(string directory = null)
         {
             _renameDirectory = directory;
-            _renamePattern = "{fn}.{ext}";
+            _renamePattern = "{fn}";
             _renameCommand = new RelayCommand(rename, canRename);
         }
 
@@ -70,15 +70,17 @@ namespace RenameThem.ViewModels
             var files = Directory.GetFiles(RenameDirectory, "*.*", SearchOption.TopDirectoryOnly);
             foreach (var fullPath in files)
             {
-                var fileName = Path.GetFileNameWithoutExtension(fullPath);
-                var extension = Path.GetExtension(fullPath).TrimStart('.');
                 var directory = Path.GetDirectoryName(fullPath);
+                var fileName = Path.GetFileNameWithoutExtension(fullPath);
+                var extension = Path.GetExtension(fullPath);
 
-                var newFileName = RenamePattern.Replace("{fn}", fileName).Replace("{ext}", extension);
-                var newFullPath = Path.Combine(directory, newFileName);
+                var newFullFileName = RenamePattern.Replace("{fn}", fileName) + extension;
+                var newFullPath = Path.Combine(directory, newFullFileName);
 
                 File.Move(fullPath, newFullPath);
             }
+
+            App.Current.MainWindow.Close();
         }
 
         private bool canRename(object obj)
