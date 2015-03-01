@@ -71,11 +71,10 @@ namespace RenameThem.ViewModels
             foreach (var fullPath in files)
             {
                 var fileName = Path.GetFileNameWithoutExtension(fullPath);
-                var extension = Path.GetExtension(fullPath);
+                var extension = Path.GetExtension(fullPath).TrimStart('.');
                 var directory = Path.GetDirectoryName(fullPath);
 
                 var newFileName = RenamePattern.Replace("{fn}", fileName).Replace("{ext}", extension);
-                // ReSharper disable once AssignNullToNotNullAttribute
                 var newFullPath = Path.Combine(directory, newFileName);
 
                 File.Move(fullPath, newFullPath);
